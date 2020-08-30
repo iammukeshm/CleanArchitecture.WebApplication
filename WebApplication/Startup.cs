@@ -23,7 +23,7 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddIdentityInfrastructure(Configuration);
             services.AddRouting(o => o.LowercaseUrls = true);
             services.AddMvc(o =>
             {
@@ -33,7 +33,7 @@ namespace WebApplication
                     .Build();
                 o.Filters.Add(new AuthorizeFilter(policy));
             });
-            services.AddIdentityInfrastructure(Configuration);
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
