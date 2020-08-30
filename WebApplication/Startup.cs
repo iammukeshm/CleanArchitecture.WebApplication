@@ -32,6 +32,7 @@ namespace WebApplication
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddRouting(o => o.LowercaseUrls = true);
             services.AddRazorPages();
         }
 
