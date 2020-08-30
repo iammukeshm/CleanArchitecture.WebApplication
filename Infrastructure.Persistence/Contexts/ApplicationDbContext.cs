@@ -1,4 +1,4 @@
-﻿using Infrastructure.Persistence.Identity.Models;
+﻿using Infrastructure.Persistence.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;

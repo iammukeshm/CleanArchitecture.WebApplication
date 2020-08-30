@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.Persistence.Identity.Models
+namespace Infrastructure.Persistence.Identity
 {
     public class ApplicationUser : IdentityUser
     {
