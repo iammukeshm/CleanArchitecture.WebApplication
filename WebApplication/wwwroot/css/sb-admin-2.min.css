@@ -350,7 +350,7 @@ template {
 }
 
 .h4, h4 {
-    font-size: 1.5rem
+    font-size: 15px
 }
 
 .h5, h5 {
@@ -4514,7 +4514,6 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     padding: .75rem 1.25rem;
     margin-bottom: 0;
     background-color: #f8f9fc;
-    border-bottom: 1px solid #e3e6f0
 }
 
     .card-header:first-child {

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infrastructure.Persistence.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,7 +43,9 @@ namespace Infrastructure.Persistence.Migrations
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     UsernameChangeLimit = table.Column<int>(nullable: false),
-                    ProfilePicture = table.Column<byte[]>(nullable: true)
+                    ProfilePicture = table.Column<byte[]>(nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    ActivatedBy = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
