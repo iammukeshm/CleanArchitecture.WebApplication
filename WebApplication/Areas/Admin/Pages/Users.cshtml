@@ -1,0 +1,101 @@
+﻿@page
+@model WebApplication.Areas.Admin.Pages.UsersModel
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between">
+    <h1 class="h3 mb-0 text-gray-800">Manage Users</h1>
+
+</div>
+<h4>Manage Users here.</h4>
+<p></p>
+
+<div class="card shadow mb-4">
+    <div class="card-body table-responsive p-0">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        User
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td>
+                            <a>
+                                @user.FirstName @user.LastName
+                            </a>
+                            <br>
+                            <small>
+                                @user.Id
+                            </small>
+                        </td>
+                        <td>
+                            <a>
+                                @user.Email
+                            </a>
+                            <br>
+                            <small>
+                                @if (user.EmailConfirmed)
+                                {
+                                    <span class="badge badge-success">Email Confirmed</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-danger">Email Not Confirme.</span>
+                                }
+                            </small>
+                           
+                        </td>
+                        <td>
+                            @if (user.Active)
+                            {
+                                <span class="badge badge-success">Active</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-danger">Deactivated</span>
+                            }
+
+                        </td>
+                        <td text-right">
+                            <a class="btn btn-primary btn-sm" href="#">
+                                <i class="fas fa-folder">
+                                </i>
+                                Profile
+                            </a>
+                            @if (!user.Active)
+                            {
+                                <a class="btn btn-success btn-sm" href="#">
+                                    <i class="fas fa-check">
+                                    </i>
+                                    Activate
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-danger btn-sm" href="#">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Deactivate
+                                </a>
+                            }
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
