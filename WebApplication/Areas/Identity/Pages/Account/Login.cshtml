@@ -51,11 +51,11 @@
                                         <div class="form-group">
                                             <input asp-for="Input.Email" type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                                             <small><span asp-validation-for="Input.Email" class="text-danger"></span></small>
-</div>
+                                        </div>
                                         <div class="form-group">
                                             <input asp-for="Input.Password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                             <small><span asp-validation-for="Input.Password" class="text-danger"></span></small>
-</div>
+                                        </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input asp-for="Input.RememberMe" type="checkbox" class="custom-control-input" id="customCheck">
@@ -78,7 +78,7 @@
                                         <a class="small">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a asp-area="Identity" asp-page="/Account/register" class="small" >Create an Account!</a>
+                                        <a asp-area="Identity" asp-page="/Account/register" class="small">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
@@ -89,13 +89,33 @@
             </div>
 
         </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 text-secondary">Default Credentials</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col">
+                                <b>Super Admin : </b> superadmin@gmail.com / 123Pa$$word!
+                                <br />
+                                <b>Basic User : </b> basicuser@gmail.com / 123Pa$$word!
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/jquery-easing/jquery.easing.min.js"></script>
-    
+
 
 </body>
 

@@ -9,7 +9,7 @@
 <p></p>
 
 <div class="card shadow mb-4">
-    <div class="card-body table-responsive p-0">
+    <div class="card-body table-responsive table-hover p-0">
         <table class="table">
             <thead>
                 <tr>
@@ -31,13 +31,24 @@
                 {
                     <tr>
                         <td>
-                            <a>
-                                @user.FirstName @user.LastName
-                            </a>
-                            <br>
-                            <small>
-                                @user.Id
-                            </small>
+                            <div class="row">
+                                @if (@user.ProfilePicture != null)
+                                {
+                                    <div class="col-sm" style="max-width:80px">
+                                        <img class="img-profile rounded-circle" style="height: 75px;width:75px;object-fit: cover;" src="data:image/*;base64,@(Convert.ToBase64String(@user.ProfilePicture))">
+                                    </div>
+                                }
+
+                                <div class="col-sm">
+                                    <a>
+                                        @user.FirstName @user.LastName
+                                    </a>
+                                    <br>
+                                    <small>
+                                        @user.Id
+                                    </small>
+                                </div>
+                            </div>
                         </td>
                         <td>
                             <a>
@@ -54,7 +65,7 @@
                                     <span class="badge badge-danger">Email Not Confirme.</span>
                                 }
                             </small>
-                           
+
                         </td>
                         <td>
                             @if (user.Active)
@@ -68,34 +79,34 @@
 
                         </td>
                         <td text-right">
-                            <a class="btn btn-primary btn-sm" href="#">
-                                <i class="fas fa-folder">
-                                </i>
-                                Profile
-                            </a>
-                            @if (!user.Active)
-                            {
-                                <a class="btn btn-success btn-sm" href="#">
-                                    <i class="fas fa-check">
-                                    </i>
-                                    Activate
-                                </a>
-                            }
-                            else
-                            {
-                                <a class="btn btn-danger btn-sm" href="#">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Deactivate
-                                </a>
-                            }
+                            <form method="post" style="display: inline-flex;">
+                                <button type="submit" style='margin-right:16px' asp-area="Profile" asp-page="Index" asp-route-userId="@user.Id" asp-page-handler="ViewProfile" class="btn btn-primary btn-sm">
+                                    Profile
+                                </button>
+                            </form>
+                                @if (!user.Active)
+                                {
+                                    <form method="post" style="display: inline-flex;">
+                                        <button style='margin-right:16px' type="submit" id="activate-profile" asp-route-data="@user.Id" asp-page-handler="ActivateUser" class="btn btn-success btn-sm">
+                                            Activate
+                                        </button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <form method="post" style="display: inline-flex;">
+                                        <button style='margin-right:16px' type="submit" class="btn btn-danger btn-sm" asp-route-data="@user.Id" asp-page-handler="DeActivateUser">
+                                            Deactivate
+                                        </button>
 
+                                    </form>
+                                }
                         </td>
-                    </tr>
+                        </tr>
                 }
 
-            </tbody>
-        </table>
-    </div>
-    <!-- /.card-body -->
-</div>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>

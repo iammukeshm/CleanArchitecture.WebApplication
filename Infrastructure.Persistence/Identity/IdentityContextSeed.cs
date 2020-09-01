@@ -25,8 +25,8 @@ namespace Infrastructure.Persistence.Identity
             {
                 UserName = "superadmin",
                 Email = "superadmin@gmail.com",
-                FirstName = "Mukesh",
-                LastName = "Murugan",
+                FirstName = "Super",
+                LastName = "Admin",
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true,
                 Active = true
@@ -52,8 +52,8 @@ namespace Infrastructure.Persistence.Identity
             {
                 UserName = "basicuser",
                 Email = "basicuser@gmail.com",
-                FirstName = "John",
-                LastName = "Doe",
+                FirstName = "Basic",
+                LastName = "User",
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true,
                 Active = true
